@@ -1,0 +1,46 @@
+@import '../variables';
+@import '../mixins';
+
+.gallery {
+  width: 150%;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: $breakpoint-mobile-width) {
+    width: 300%;
+  }
+
+  &--windows {
+    width: 100%;
+
+    .gallery__photo {
+      width: 33.33%;
+    }
+  }
+
+  &__photo {
+    width: 20%;
+    min-height: 37vw;
+    margin: 0;
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+    transition: 0.8s opacity;
+  }
+
+  &__packshot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: 0.3s opacity;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
